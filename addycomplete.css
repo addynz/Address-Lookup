@@ -1,0 +1,36 @@
+﻿ul.nc_list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: solid 1px #999;
+    background: #ffffff;
+    font-size: 15px;
+    z-index: 1010;
+}
+ul.nc_list li.nc_item {
+    cursor: pointer; 
+    padding: 5px 5px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border-bottom: 1px solid #cccccc;
+}
+ul.nc_list li.nc_item.nc_hover {
+    background-color: #337ab7;
+    color: white;
+}
+ul.nc_list li.nc_footer {
+    font-size: 15px;
+    color: #555;
+    text-align: right;
+    background: #eee;
+    padding: 3px 5px;
+    font-weight: bold;
+}
+li.nc_empty {
+    padding: 5px 5px;
+    border-bottom: 1px solid #DBDBDB;
+}
+.nc_highlight {
+    font-weight: bold;
+}
