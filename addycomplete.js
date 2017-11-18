@@ -41,19 +41,17 @@ function AddyUrlSettingFactory(scriptName) {
         var options = {};
 
         // Set default options
-        options.ignoreKeys = [38, 40, 13]; // up & down arrows, enter
         options.excludePostBox = getParameterByName("excludePostBox") || false;
         options.nzCountryValue = getParameterByName("nzCountryValue") || "NZL";
+        options.maxItems = getParameterByName("maxItems") || 10;
         return options;
     }
 
-    // Create the initial configuration variables
-    this.createConfig = function () {
-        var config = {};
-        config.key = getParameterByName("key");
-        if (!config.key || config.key == "") console.warn("The API key is missing");
-        config.maxItems = getParameterByName("maxItems") || 10;
-        return config;
+    // Get the API key
+    this.getKey = function () {
+        var key = getParameterByName("key");
+        if (!key || key == "") console.warn("The API key is missing");
+        return key;
     }
 
     // Create the callback variable
@@ -80,7 +78,7 @@ function AddyComplete(input, fields) {
     me.fields = fields ? fields : {};
 
     me.options = addySettingsFactory.createOptions();
-    me.config = addySettingsFactory.createConfig();
+    me.key = addySettingsFactory.getKey();
 
     var createGuid = function () {
         return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
@@ -99,8 +97,8 @@ function AddyComplete(input, fields) {
             }
         });
     }
-
-    me.widget = new NeatComplete.Widget(input, { empty_content: "<b>Address not found.</b> Please verify the address or type it in manually.", max_results: me.config.maxItems });
+    
+    me.widget = new NeatComplete.Widget(input, { empty_content: "<b>Address not found.</b> Please verify the spelling.<br />For brand new addresses, please type it in manually.", max_results: me.options.maxItems });
     var highLightRegEx = null;
     
     me.widget.addService("addy", function (query, callback) {
@@ -108,7 +106,9 @@ function AddyComplete(input, fields) {
             return;
         }
 
-        makeRequest('api/search?key=' + me.config.key + '&session=' + sessionId + '&expostbox=' + me.options.excludePostBox + '&max=' + me.config.maxItems + '&s=' + query, function (data) {
+        makeRequest('api/search?key=' + me.key + '&session=' + sessionId + '&expostbox=' + me.options.excludePostBox + '&max=' + me.options.maxItems + '&s=' + query, function (data) {
+            me.widget.setOption("max_results", me.options.maxItems);
+
             highLightRegEx = new RegExp("(" + query.split(' ').join('|') + ")", "gi");
             
             var results = new Array();
@@ -120,12 +120,13 @@ function AddyComplete(input, fields) {
         });
     }, {
         renderer: function (display, item) {
-            return item.a.replace(highLightRegEx, '<span class="nc_highlight">$1</span>');
+            var highlightClass = me.widget.getOption('highlight_class');
+            return item.a.replace(highLightRegEx, '<span class="' + (highlightClass === undefined ? 'nc_highlight' : highlightClass) + '">$1</span>');
         }
     });
 
     me.widget.on('result:select', function (display, item) {
-        makeRequest('api/address/' + item.id + '?key=' + me.config.key + '&session=' + sessionId, function (address) {
+        makeRequest('api/address/' + item.id + '?key=' + me.key + '&session=' + sessionId, function (address) {
             if (me.fields.address) me.fields.address.value = address.displayline;
             if (me.fields.suburb) me.fields.suburb.value = address.suburb;
             if (me.fields.city) me.fields.city.value = address.city;

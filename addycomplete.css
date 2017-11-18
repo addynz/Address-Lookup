@@ -29,7 +29,7 @@ ul.nc_list li.nc_footer {
 }
 li.nc_empty {
     padding: 5px 5px;
-    border-bottom: 1px solid #DBDBDB;
+    border-bottom: 1px solid #cccccc;
 }
 .nc_highlight {
     font-weight: bold;
