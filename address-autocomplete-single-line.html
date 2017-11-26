@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Address Lookup Single Line Form | Demo</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+    <link type="text/css" rel="stylesheet prefetch" href="https://addycdn.azureedge.net/neatcomplete/2.1.0/addycomplete.min.css">
+    <style>
+        .awesomplete {
+            display: block !important;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-size: 10pt;
+        }
+        .field {
+            width: 300px;        
+        }
+        .label {
+            width: 120px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <td class="label">Address</td>
+                <td><input type="text" class="field" id="address" placeholder="Enter an address.." auto-complete></td>
+            </tr>
+            <tr>
+                <td>Suburb</td>
+                <td><input type="text" class="field" id="suburb"></td>
+            </tr>
+            <tr>
+                <td>Town/City</td>
+                <td><input type="text" class="field" id="city"></td>
+            </tr>
+            <tr>
+                <td>Region</td>
+                <td>
+                    <select id="region">
+                        <option value="">Select a region ...</option>
+                        <option value="301">Auckland</option>
+                        <option value="303">Bay of Plenty</option>
+                        <option value="312">Canterbury</option>
+                        <option value="304">Gisborne</option>
+                        <option value="305">Hawke's Bay</option>
+                        <option value="307">Manawatu - Wanganui</option>
+                        <option value="310">Marlborough</option>
+                        <option value="315">Nelson</option>
+                        <option value="300">Northland</option>
+                        <option value="313">Otago</option>
+                        <option value="314">Southland</option>
+                        <option value="306">Taranaki</option>
+                        <option value="309">Tasman</option>
+                        <option value="302">Waikato</option>
+                        <option value="308">Wellington</option>
+                        <option value="311">West Coast</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Postcode</td>
+                <td><input type="text" class="field" id="postcode"></td>
+            </tr>
+        </table>
+    </form>    
+    <script type="text/javascript">
+        // This is the callback function to initialise the address lookup script
+        function initAddy() {
+            var addyComplete = new AddyComplete(document.getElementById("address"));
+            addyComplete.fields = {
+                address1: document.getElementById("address"),
+                suburb: document.getElementById("suburb"),
+                city: document.getElementById("city"),
+                postcode: document.getElementById("postcode"),
+                region: document.getElementById("region")
+            }
+        }
+    </script>
+    <script src="https://addycdn.azureedge.net/neatcomplete/2.1.0/addycomplete.js?key=YOUR-ADDY-KEY&callback=initAddy" async defer></script>
+</body>
+</html>

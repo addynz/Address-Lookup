@@ -130,7 +130,6 @@ function AddyComplete(input, fields) {
             if (me.fields.address) me.fields.address.value = address.displayline;
             if (me.fields.suburb) me.fields.suburb.value = address.suburb;
             if (me.fields.city) me.fields.city.value = address.city;
-            if (me.fields.region) me.fields.region.value = address.region;
             if (me.fields.postcode) me.fields.postcode.value = address.postcode;
             if (me.fields.line1) me.fields.line1.value = address.address1;
             if (me.fields.line2) me.fields.line2.value = address.address2;
@@ -148,6 +147,27 @@ function AddyComplete(input, fields) {
                 } else {
                     me.fields.address1.value = address.displayline;
                     me.fields.address2.value = '';
+                }
+            } else if (me.fields.address1 && !me.fields.address2) {
+                me.fields.address1.value = address.displayline;
+            }
+
+            var region = me.fields.region;
+            if (region) {
+                if (region.options) {
+                    address.region = address.region.toUpperCase();
+                    var regions = [address.region, address.region.replace("'", ""), address.region.replace("-", " - "), address.region.replace("-", " / "), address.region.replace("-", "/")];
+                    console.log(regions);
+                    
+                    for (var i = 0; i < region.options.length; i++) {
+                        if (regions.indexOf(region.options[i].text.toUpperCase()) > -1 ||
+                            regions.indexOf(region.options[i].value.toUpperCase()) > -1) {
+                            region.selectedIndex = i;
+                            break;
+                        }
+                    }
+                } else {
+                    region.value = address.region;
                 }
             }
         }.bind(this));
