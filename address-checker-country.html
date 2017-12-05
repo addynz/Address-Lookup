@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Address Checker with Country Field | Addy.co.nz</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+    <link type="text/css" rel="stylesheet prefetch" href="https://addycdn.azureedge.net/neatcomplete/2.1.0/addycomplete.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-size: 10pt;
+        }
+        .field {
+            width: 300px;        
+        }
+        .label {
+            width: 120px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <td>Country</td>
+                <td>
+                    <select id="country" class="field" onchange="onCountryChange(this.value)">
+                        <option value="AUS">Australia</option>
+                        <option value="CAN">Canada</option>
+                        <option value="NZL" selected="">New Zealand</option>
+                        <option value="ZWE">Zimbabwe</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="label">Address Line 1</td>
+                <td><input type="text" class="field" id="address1" placeholder="Start typing an address.." auto-complete></td>
+            </tr>
+            <tr>
+                <td>Address Line 2</td>
+                <td><input type="text" class="field" id="address2"></td>
+            </tr>
+            <tr>
+                <td>Suburb</td>
+                <td><input type="text" class="field" id="suburb"></td>
+            </tr>
+            <tr>
+                <td>City/Town</td>
+                <td><input type="text" class="field" id="city"></td>
+            </tr>
+            <tr>
+                <td>Postcode</td>
+                <td><input type="text" class="field" id="postcode"></td>
+            </tr>
+        </table>
+    </form>    
+    <script type="text/javascript">
+        var addyComplete;
+
+        // This is the callback function to initialise the address lookup script
+        function initAddy() {
+            addyComplete = new AddyComplete(document.getElementById("address1"));
+            addyComplete.fields = {
+                address1: document.getElementById("address1"),
+                address2: document.getElementById("address2"),
+                suburb: document.getElementById("suburb"),
+                city: document.getElementById("city"),
+                postcode: document.getElementById("postcode")
+            }
+
+            // Initialise the country value
+            var country = document.getElementById("country");
+            onCountryChange(country.options[country.selectedIndex].value);
+        }
+
+        function onCountryChange(value) {
+            if (!addyComplete) return;
+
+            // Enable/disable Addy based on the selected country
+            if (value === "NZL") {
+                addyComplete.enable();
+            } else {
+                addyComplete.disable();
+            }
+        }
+    </script>
+    <script src="https://addycdn.azureedge.net/neatcomplete/2.1.0/addycomplete.min.js?key=YOUR-ADDY-KEY&callback=initAddy" async defer></script>
+</body>
+</html>
