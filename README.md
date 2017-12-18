@@ -48,7 +48,7 @@ Live demo and documentation: <https://www.addy.co.nz/address-finder-code-example
 
 ## Prices
 
-Addy's address finder is free of charge; download and install it at no cost.  Just setup an account with Addy to get your 1,500 free completed address lookups per month.  If you require additional address transactions, simply pay as you go. See: https://www.addy.co.nz/pricing
+Addy's address finder is free of charge; download and install it at no cost.  Just setup an account with Addy to get your 1,500 free completed address validations per month.  If you require additional address lookups, simply pay as you go. See: https://www.addy.co.nz/pricing
 
 ## Links
 
@@ -62,7 +62,7 @@ Frequently Asked Questions: <https://www.addy.co.nz/frequently-asked-questions>
 
 ## License
 
-The Address Lookup code is released under the MIT License.
+The Address Checker code is released under the MIT License.
 
 The reqwest library included in the bundle is released under the MIT License <https://github.com/LeaVerou/awesomplete>.
 
