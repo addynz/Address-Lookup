@@ -54,7 +54,7 @@ Addy's address finder is free of charge; download and install it at no cost.  Ju
 
 Official Addy site: <https://www.addy.co.nz/>
 
-RESTful API Documentation: <https://www.addy.co.nz/address-finder-and-postcode-api>
+NZ Address Finder and Postcode API Documentation: <https://www.addy.co.nz/address-finder-and-postcode-api>
 
 All Documentation: <https://www.addy.co.nz/documentation>
 
