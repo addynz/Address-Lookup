@@ -44,17 +44,17 @@ function initAddy() {
 }
 ```
 
-Live demo and documentation: <https://www.addy.co.nz/address-lookup-code-example>
+Live demo and documentation: <https://www.addy.co.nz/address-finder-code-example>
 
 ## Prices
 
-Addy's address lookup is free of charge; download and install it at no cost.  Just setup an account with Addy to get your 1,500 free completed address lookups per month.  If you require additional address transactions, simply pay as you go. See: https://www.addy.co.nz/pricing
+Addy's address finder is free of charge; download and install it at no cost.  Just setup an account with Addy to get your 1,500 free completed address lookups per month.  If you require additional address transactions, simply pay as you go. See: https://www.addy.co.nz/pricing
 
 ## Links
 
 Official Addy site: <https://www.addy.co.nz/>
 
-RESTful API Documentation: <https://www.addy.co.nz/address-search-and-postcode-api>
+RESTful API Documentation: <https://www.addy.co.nz/address-finder-and-postcode-api>
 
 All Documentation: <https://www.addy.co.nz/documentation>
 
