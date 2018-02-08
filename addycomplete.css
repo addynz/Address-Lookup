@@ -14,6 +14,7 @@ ul.nc_list li.nc_item {
     white-space: nowrap;
     text-overflow: ellipsis;
     border-bottom: 1px solid #cccccc;
+    text-transform: none !important;
 }
 ul.nc_list li.nc_item.nc_hover {
     background-color: #337ab7;
