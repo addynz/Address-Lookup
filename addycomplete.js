@@ -60,6 +60,11 @@ function AddyUrlSettingFactory(scriptName) {
         return null;
     }
 
+    this.getLoadCssEnabled = function() {
+        var loadCss = getParameterByName("loadcss");
+        return (loadCss && loadCss === "true");
+    }
+
     var src = getScriptSrc(scriptName);
 }
 
@@ -265,6 +270,14 @@ function callAddyInit() {
         initCalled = true;
     }
     if (!initCalled) initAddyByCss();
+
+    if (addySettingsFactory.getLoadCssEnabled()) {
+        var link = document.createElement("link");
+        link.setAttribute("rel", "stylesheet");
+        link.setAttribute("type", "text/css");
+        link.setAttribute("href", "https://addycdn.azureedge.net/neatcomplete/2.1.0/addycomplete.min.css");
+        document.getElementsByTagName("head")[0].appendChild(link);
+    }
 }
 
 callAddyInit();
