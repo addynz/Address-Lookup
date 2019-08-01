@@ -392,6 +392,7 @@ function AddyComplete(input, fields) {
         if (me.fields.dpid) me.fields.dpid.value = address.dpid;
         if (me.fields.id) me.fields.id.value = address.id;
         if (me.fields.postcode) me.fields.postcode.value = address.postcode;
+        if (me.fields.rdnumber) me.fields.rdnumber.value = address.rdnumber;
         if (me.fields.line1) me.fields.line1.value = address.address1;
         if (me.fields.line2) me.fields.line2.value = address.address2;
         if (me.fields.line3) me.fields.line3.value = address.address3;
@@ -502,6 +503,7 @@ function initAddyByCss() {
                 suburb: getByName(addressFieldPrefixes[i] + "suburb"),
                 city: getByName(addressFieldPrefixes[i] + "city"),
                 region: getByName(addressFieldPrefixes[i] + "region"),
+                rdnumber: getByName(addressFieldPrefixes[i] + "rdnumber"),
                 territory: getByName(addressFieldPrefixes[i] + "territory"),
                 postcode: getByName(addressFieldPrefixes[i] + "postcode"),
                 dpid: getByName(addressFieldPrefixes[i] + "dpid"),
