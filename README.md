@@ -48,7 +48,7 @@ Live demo and documentation: <https://www.addy.co.nz/address-finder-code-example
 
 ## Prices
 
-Addy's address finder is free of charge; download and install it at no cost.  Just setup an account with Addy to get your 1,500 free completed address validations per month.  If you require additional address lookups, simply pay as you go. See: https://www.addy.co.nz/pricing
+Visit the pricing page for more information and to find a plan that works for your business (https://www.addy.co.nz/pricing).
 
 ## Links
 
