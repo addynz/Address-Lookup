@@ -5,7 +5,7 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="UTF-8">
     <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
-    <link type="text/css" rel="stylesheet prefetch" href="https://www.addy.co.nz/css/addy.css">
+    <link type="text/css" rel="stylesheet prefetch" href="addycomplete.min.css">
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -78,13 +78,13 @@
             if (!addyComplete) return;
 
             // Enable/disable Addy based on the selected country
-            if (value === "NZL") {
-                addyComplete.enable();
-            } else {
-                addyComplete.disable();
-            }
+            // if (value === "AUS") {
+            //     addyComplete.enable();
+            // } else {
+            //     addyComplete.disable();
+            // }
         }
     </script>
-    <script src="https://www.addy.co.nz/scripts/addy.js?key=demo-api-key&callback=initAddy" async defer></script>
+    <script src="addy.js?auKey=59872e1220ee429ab04e90f3db0c48c5&callback=initAddy" async defer></script>
 </body>
 </html>
