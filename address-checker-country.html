@@ -78,13 +78,13 @@
             if (!addyComplete) return;
 
             // Enable/disable Addy based on the selected country
-            // if (value === "AUS") {
-            //     addyComplete.enable();
-            // } else {
-            //     addyComplete.disable();
-            // }
+            if (value === "NZ") {
+                addyComplete.enable();
+            } else {
+                addyComplete.disable();
+            }
         }
     </script>
-    <script src="addy.js?auKey=59872e1220ee429ab04e90f3db0c48c5&callback=initAddy" async defer></script>
+    <script src="https://www.addysolutions.com/cdn/address-lookup-1.6.0/js/addy.min.js?nzKey=demo-api-key&country=nz&callback=initAddy" async defer></script>
 </body>
 </html>
