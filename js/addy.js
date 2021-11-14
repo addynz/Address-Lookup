@@ -4,6 +4,7 @@
  * Neat Complete v1.5.10 (c) 2019 AddressFinder https://addressfinder.nz https://addressfinder.com.au https://github.com/AbleTech/neat-complete/blob/develop/LICENSE.md 
  * 
 */
+const jsVersion = '1.6.0';
 function AddyUrlSettingFactory(e) {
   function t(e) {
     e = e.replace(/[\[\]]/g, "\\$&");
@@ -19,8 +20,7 @@ function AddyUrlSettingFactory(e) {
     var t = document.getElementsByTagName("script");
     e = e.toLowerCase();
     for (
-      //var s = ["/" + e + ".js", "/addycomplete.js", "/addycomplete.min.js", e],
-      var s = ["/addy.js"],
+      var s = ["/addy.js", "/addy.min.js"],
         n = 0;
       n < s.length;
       n++
@@ -172,7 +172,7 @@ function AddyComplete(e, t) {
               console.warn("Request failed: ", e), n && n(e);
             },
           })
-        : console.warn("An API key must be specified.");
+        : console.warn("An API key in URL query attribute 'nzKey' for 'country=nz' or 'auKey' for 'country=au' must be specified.");
     }),
       (i.searchRequest = function (e, t, s) {
         i.makeRequest(
@@ -557,8 +557,8 @@ function callAddyInit() {
   ) {
     var s = document.createElement("link");
     s.setAttribute("rel", "stylesheet"),
-      s.setAttribute("type", "text/css"),
-      s.setAttribute("href", "https://beta.addysolutions.com/css/addy.min.css"),
+      s.setAttribute("type", "text/css"),      
+      s.setAttribute("href", "https://www.addysolutions.com/css/address-lookup/"+jsVersion+"/css/addy.min.css"),
       document.getElementsByTagName("head")[0].appendChild(s);
   }
 }

@@ -5,7 +5,12 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="UTF-8">
     <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
-    <link type="text/css" rel="stylesheet prefetch" href="addycomplete.min.css">
+    
+    <!-- only use if loadCss URL query attribute flag is set to false -->    
+    <link type="text/css" rel="stylesheet prefetch" href="./css/addy.min.css">
+    <!-- or CDN -->
+    <!-- <link type="text/css" rel="stylesheet prefetch" href="https://www.addysolutions.com/cdn/address-lookup/1.6.0/css/addy.min.css"> -->
+
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -78,13 +83,21 @@
             if (!addyComplete) return;
 
             // Enable/disable Addy based on the selected country
-            if (value === "NZ") {
+            if (value === "NZL") {
                 addyComplete.enable();
             } else {
                 addyComplete.disable();
             }
         }
     </script>
-    <script src="https://www.addysolutions.com/cdn/address-lookup-1.6.0/js/addy.min.js?nzKey=demo-api-key&country=nz&callback=initAddy" async defer></script>
+    <!-- for NZ country -->
+    <script src="./js/addy.min.js?nzKey=demo-api-key&country=nz&callback=initAddy" async defer></script>        
+    <!-- or CDN -->
+    <!-- <script src="https://www.addysolutions.com/cdn/address-lookup/1.6.0/js/addy.min.js?nzKey=demo-api-key&country=nz&callback=initAddy" async defer></script>         -->
+    
+    <!-- for AU country -->
+    <!-- <script src="https://www.addysolutions.com/cdn/address-lookup/1.6.0/js/addy.min.js?auKey=demo-api-key&country=au&callback=initAddy" async defer></script>     -->
+    <!-- or CDN -->
+    <!-- <script src="./js/addy.min.js?auKey=demo-api-key&country=au&callback=initAddy" async defer></script>     -->
 </body>
 </html>
