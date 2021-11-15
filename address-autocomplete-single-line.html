@@ -5,7 +5,12 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="UTF-8">
     <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
-    <link type="text/css" rel="stylesheet prefetch" href="https://www.addy.co.nz/css/addy.css">
+
+    <!-- only use if loadCss URL query attribute flag is set to false -->    
+    <link type="text/css" rel="stylesheet prefetch" href="./css/addy.min.css">
+    <!-- or CDN -->
+    <!-- <link type="text/css" rel="stylesheet prefetch" href="https://www.addysolutions.com/address-lookup/1.6.0/css/addy.min.css"> -->
+
     <style>
         .awesomplete {
             display: block !important;
@@ -15,7 +20,7 @@
             font-size: 10pt;
         }
         .field {
-            width: 300px;        
+            width: 300px;
         }
         .label {
             width: 120px;
@@ -66,7 +71,7 @@
                 <td><input type="text" class="field" id="postcode"></td>
             </tr>
         </table>
-    </form>    
+    </form>
     <script type="text/javascript">
         // This is the callback function to initialise the address lookup script
         function initAddy() {
@@ -76,10 +81,18 @@
                 suburb: document.getElementById("suburb"),
                 city: document.getElementById("city"),
                 postcode: document.getElementById("postcode"),
-                region: document.getElementById("region")
+                //region: document.getElementById("region") // NZ only
             }
         }
     </script>
-    <script src="https://www.addy.co.nz/scripts/addy.js?key=demo-api-key&callback=initAddy" async defer></script>
+    <!-- for NZ country -->
+    <script src="./js/addy.min.js?nzKey=demo-api-key&country=nz&callback=initAddy" async defer></script>        
+    <!-- or CDN -->
+    <!-- <script src="https://www.addysolutions.com/address-lookup/1.6.0/js/addy.min.js?nzKey=demo-api-key&country=nz&callback=initAddy" async defer></script>         -->
+    
+    <!-- for AU country -->
+    <!-- <script src="https://www.addysolutions.com/address-lookup/1.6.0/js/addy.min.js?auKey=demo-api-key&country=au&callback=initAddy" async defer></script>     -->
+    <!-- or CDN -->
+    <!-- <script src="./js/addy.min.js?auKey=demo-api-key&country=au&callback=initAddy" async defer></script>     -->
 </body>
 </html>
