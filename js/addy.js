@@ -558,7 +558,7 @@ function callAddyInit() {
     var s = document.createElement("link");
     s.setAttribute("rel", "stylesheet"),
       s.setAttribute("type", "text/css"),      
-      s.setAttribute("href", "https://www.addysolutions.com/css/address-lookup/"+jsVersion+"/css/addy.min.css"),
+      s.setAttribute("href", "https://www.addysolutions.com/address-lookup/"+jsVersion+"/css/addy.min.css"),
       document.getElementsByTagName("head")[0].appendChild(s);
   }
 }
