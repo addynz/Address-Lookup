@@ -1,5 +1,5 @@
 /** 
- * Addy autocomplete v1.6.0 
+ * Addy autocomplete v1.6.1 
  * 
  * Neat Complete v1.5.10 (c) 2019 AddressFinder https://addressfinder.nz https://addressfinder.com.au https://github.com/AbleTech/neat-complete/blob/develop/LICENSE.md 
  * 
