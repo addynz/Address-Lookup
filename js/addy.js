@@ -1,5 +1,5 @@
 /** 
- * Addy autocomplete v1.6.0 
+ * Addy autocomplete v1.6.1 
  * 
  * Neat Complete v1.5.10 (c) 2019 AddressFinder https://addressfinder.nz https://addressfinder.com.au https://github.com/AbleTech/neat-complete/blob/develop/LICENSE.md 
  * 
@@ -558,7 +558,7 @@ function callAddyInit() {
     var s = document.createElement("link");
     s.setAttribute("rel", "stylesheet"),
       s.setAttribute("type", "text/css"),      
-      s.setAttribute("href", "https://www.addysolutions.com/css/address-lookup/"+jsVersion+"/css/addy.min.css"),
+      s.setAttribute("href", "https://www.addysolutions.com/address-lookup/"+jsVersion+"/css/addy.min.css"),
       document.getElementsByTagName("head")[0].appendChild(s);
   }
 }
