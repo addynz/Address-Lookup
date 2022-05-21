@@ -1,5 +1,5 @@
 /** 
- * Addy autocomplete v1.6.1 
+ * Addy autocomplete v1.6.2 
  * 
  * Neat Complete v1.5.10 (c) 2019 AddressFinder https://addressfinder.nz https://addressfinder.com.au https://github.com/AbleTech/neat-complete/blob/develop/LICENSE.md 
  * 
@@ -39,7 +39,7 @@ function AddyUrlSettingFactory(e) {
       (e.exSpelling = t("excludeSpelling") || !1),
       (e.exWord = t("excludeWord") || !1),
       (e.exIp = t("excludeIp") || !1),
-      (e.exPostcodes = t("excludePostcodes") || ""),
+      (e.exPostcode = t("excludePostcode") || ""),
       (e.inPostcode = t("includePostcode") || ""),
       (e.exRegion = t("excludeRegion") || ""),
       (e.inRegion = t("includeRegion") || ""),
@@ -110,9 +110,9 @@ function AddyComplete(e, t) {
       i.options.exSpelling && (i.searchSuffix += "&exspelling=true"),
       i.options.exWord && (i.searchSuffix += "&exword=true"),
       i.options.exIp && (i.searchSuffix += "&exip=true"),
-      i.options.exPostcodes &&
-        "" !== i.options.exPostcodes &&
-        (i.searchSuffix += "&expostcode=" + i.options.exPostcodes),
+      i.options.exPostcode &&
+        "" !== i.options.exPostcode &&
+        (i.searchSuffix += "&expostcode=" + i.options.exPostcode),
       i.options.inPostcode &&
         "" !== i.options.inPostcode &&
         (i.searchSuffix += "&inpostcode=" + i.options.inPostcode),
@@ -295,7 +295,7 @@ function AddyComplete(e, t) {
         (i.options.exIp = e), n();
       }),
       (i.setExcludePostcodes = function (e) {
-        (i.options.exPostcodes = Array.isArray(e) ? e.join("-") : e), n();
+        (i.options.exPostcode = Array.isArray(e) ? e.join("-") : e), n();
       }),
       (i.setIncludePostcodes = function (e) {
         (i.options.inPostcode = Array.isArray(e) ? e.join("-") : e), n();
