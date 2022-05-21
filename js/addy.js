@@ -424,7 +424,6 @@ function AddyComplete(e, t) {
             !i.fields.suburb ||
             "" !== e.suburb ||
             ("" === e.city && "" === e.mailtown)
-             //||             (i.fields.suburb.value = "" === e.mailtown ? e.city : e.mailtown)
              ,
           i.fields.address1 && i.fields.address2
             ? (e.address4 || 0 === e.address2.indexOf("RD ")
@@ -853,7 +852,6 @@ function callAddyInit() {
                 this.options.timeout
               ))
             );
-            var e;
           }),
           (n.prototype._getSuggestions = function () {
             var e, t, s, n, i;
@@ -1229,7 +1227,6 @@ function callAddyInit() {
                 })(this)
               )
             );
-            var e;
           }),
           (e.prototype.selectItem = function () {
             return (
