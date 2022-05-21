@@ -1,10 +1,10 @@
 /** 
- * Addy autocomplete v1.6.1 
+ * Addy autocomplete v1.6.2 
  * 
  * Neat Complete v1.5.10 (c) 2019 AddressFinder https://addressfinder.nz https://addressfinder.com.au https://github.com/AbleTech/neat-complete/blob/develop/LICENSE.md 
  * 
 */
-const jsVersion = '1.6.0';
+const jsVersion = '1.6.2';
 function AddyUrlSettingFactory(e) {
   function t(e) {
     e = e.replace(/[\[\]]/g, "\\$&");
@@ -39,7 +39,7 @@ function AddyUrlSettingFactory(e) {
       (e.exSpelling = t("excludeSpelling") || !1),
       (e.exWord = t("excludeWord") || !1),
       (e.exIp = t("excludeIp") || !1),
-      (e.exPostcodes = t("excludePostcodes") || ""),
+      (e.exPostcode = t("excludePostcode") || ""),
       (e.inPostcode = t("includePostcode") || ""),
       (e.exRegion = t("excludeRegion") || ""),
       (e.inRegion = t("includeRegion") || ""),
@@ -110,9 +110,9 @@ function AddyComplete(e, t) {
       i.options.exSpelling && (i.searchSuffix += "&exspelling=true"),
       i.options.exWord && (i.searchSuffix += "&exword=true"),
       i.options.exIp && (i.searchSuffix += "&exip=true"),
-      i.options.exPostcodes &&
-        "" !== i.options.exPostcodes &&
-        (i.searchSuffix += "&expostcode=" + i.options.exPostcodes),
+      i.options.exPostcode &&
+        "" !== i.options.exPostcode &&
+        (i.searchSuffix += "&expostcode=" + i.options.exPostcode),
       i.options.inPostcode &&
         "" !== i.options.inPostcode &&
         (i.searchSuffix += "&inpostcode=" + i.options.inPostcode),
@@ -295,7 +295,7 @@ function AddyComplete(e, t) {
         (i.options.exIp = e), n();
       }),
       (i.setExcludePostcodes = function (e) {
-        (i.options.exPostcodes = Array.isArray(e) ? e.join("-") : e), n();
+        (i.options.exPostcode = Array.isArray(e) ? e.join("-") : e), n();
       }),
       (i.setIncludePostcodes = function (e) {
         (i.options.inPostcode = Array.isArray(e) ? e.join("-") : e), n();
@@ -403,12 +403,7 @@ function AddyComplete(e, t) {
         (e.displayline = e.displayline || e.address1),
           i.fields.address && (i.fields.address.value = e.displayline),
           i.fields.suburb &&
-            (i.fields.suburb.value =
-              "" === e.suburb
-                ? "" === e.mailtown
-                  ? e.city
-                  : e.mailtown
-                : e.suburb),
+            (i.fields.suburb.value = e.suburb),
           i.fields.city &&
             (i.fields.city.value =
               ("" === e.mailtown ? e.city : e.mailtown) || e.state),
@@ -428,8 +423,8 @@ function AddyComplete(e, t) {
           i.fields.city ||
             !i.fields.suburb ||
             "" !== e.suburb ||
-            ("" === e.city && "" === e.mailtown) ||
-            (i.fields.suburb.value = "" === e.mailtown ? e.city : e.mailtown),
+            ("" === e.city && "" === e.mailtown)
+             ,
           i.fields.address1 && i.fields.address2
             ? (e.address4 || 0 === e.address2.indexOf("RD ")
                 ? ((i.fields.address1.value = e.address1),
@@ -857,7 +852,6 @@ function callAddyInit() {
                 this.options.timeout
               ))
             );
-            var e;
           }),
           (n.prototype._getSuggestions = function () {
             var e, t, s, n, i;
@@ -1233,7 +1227,6 @@ function callAddyInit() {
                 })(this)
               )
             );
-            var e;
           }),
           (e.prototype.selectItem = function () {
             return (
