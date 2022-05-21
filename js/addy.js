@@ -4,7 +4,7 @@
  * Neat Complete v1.5.10 (c) 2019 AddressFinder https://addressfinder.nz https://addressfinder.com.au https://github.com/AbleTech/neat-complete/blob/develop/LICENSE.md 
  * 
 */
-const jsVersion = '1.6.0';
+const jsVersion = '1.6.2';
 function AddyUrlSettingFactory(e) {
   function t(e) {
     e = e.replace(/[\[\]]/g, "\\$&");
