@@ -403,7 +403,7 @@ function AddyComplete(e, t) {
         (e.displayline = e.displayline || e.address1),
           i.fields.address && (i.fields.address.value = e.displayline),
           i.fields.suburb &&
-            (i.fields.suburb.value = e.suburb),
+          (i.fields.suburb.value = e.suburb),
           i.fields.city &&
             (i.fields.city.value =
               ("" === e.mailtown ? e.city : e.mailtown) || e.state),
@@ -423,8 +423,7 @@ function AddyComplete(e, t) {
           i.fields.city ||
             !i.fields.suburb ||
             "" !== e.suburb ||
-            ("" === e.city && "" === e.mailtown)
-             ,
+            ("" === e.city && "" === e.mailtown),
           i.fields.address1 && i.fields.address2
             ? (e.address4 || 0 === e.address2.indexOf("RD ")
                 ? ((i.fields.address1.value = e.address1),
@@ -852,6 +851,7 @@ function callAddyInit() {
                 this.options.timeout
               ))
             );
+            var e;
           }),
           (n.prototype._getSuggestions = function () {
             var e, t, s, n, i;
@@ -1227,6 +1227,7 @@ function callAddyInit() {
                 })(this)
               )
             );
+            var e;
           }),
           (e.prototype.selectItem = function () {
             return (
