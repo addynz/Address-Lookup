@@ -7,8 +7,8 @@
 const jsVersion = '1.6.2';
 function AddyUrlSettingFactory(e) {
   function t(e) {
-    e = e.replace(/[\[\]]/g, "\\$&");
-    var t = new RegExp("[?&]" + e + "(=([^&#]*)|&|#|$)"),
+    e = (typeof e === 'string') ? e.replace(/[\[\]]/g, "\\$&") : '';
+    var t = new RegExp("[?&]" + e + "(=([^&#]*)|&|#|$)", 'i'),
       s = t.exec(n);
     return s
       ? s[2]
@@ -33,18 +33,18 @@ function AddyUrlSettingFactory(e) {
   (this.createOptions = function () {
     var e = {};
     return (
-      (e.excludePostBox = t("excludePostBox") || !1),
-      (e.exRural = t("excludeRural") || !1),
-      (e.exUndeliver = t("excludeUndeliver") || !1),
-      (e.exSpelling = t("excludeSpelling") || !1),
-      (e.exWord = t("excludeWord") || !1),
-      (e.exIp = t("excludeIp") || !1),
-      (e.exPostcode = t("excludePostcode") || ""),
-      (e.inPostcode = t("includePostcode") || ""),
-      (e.exRegion = t("excludeRegion") || ""),
-      (e.inRegion = t("includeRegion") || ""),
-      (e.exTerritory = t("excludeTerritory") || ""),
-      (e.inTerritory = t("includeTerritory") || ""),
+      (e.excludePostBox = t("exPostBox") || !1),
+      (e.exRural = t("exRural") || !1),
+      (e.exUndeliver = t("exUndeliver") || !1),
+      (e.exSpelling = t("exSpelling") || !1),
+      (e.exWord = t("exWord") || !1),
+      (e.exIp = t("exIp") || !1),
+      (e.exPostcode = t("exPostCode") || ""),
+      (e.inPostcode = t("inPostCode") || ""),
+      (e.exRegion = t("exRegion") || ""),
+      (e.inRegion = t("inRegion") || ""),
+      (e.exTerritory = t("exTerritory") || ""),
+      (e.inTerritory = t("inTerritory") || ""),
       (e.tag = t("tag") || ""),
       (e.uniqueId = t("uniqueid") || ""),
       (e.maxItems = t("maxItems") || 10),
@@ -205,6 +205,8 @@ function AddyComplete(e, t) {
     (i.service = i.widget.addService(
       "addy",
       function (e, t) {
+        // reset URL suffix
+        n();
         try {
           a = new RegExp("(" + s(e).split(" ").join("|") + ")", "gi");
         } catch (e) {

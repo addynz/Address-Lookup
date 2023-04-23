@@ -53,6 +53,7 @@
         // This is the callback function to initialise the address lookup script
         function initAddy() {
             var addyComplete = new AddyComplete(document.getElementById("address1"));
+            addyComplete.options.excludePostBox = false;
             addyComplete.fields = {
                 address1: document.getElementById("address1"),
                 address2: document.getElementById("address2"),
@@ -64,9 +65,9 @@
     </script>
     
     <!-- for NZ country -->
-    <script src="./js/addy.js?nzKey=demo-api-key&country=nz&callback=initAddy" async defer></script>        
+    <!-- <script src="./js/addy.js?nzKey=e52121541ba843c2bb3b1b0dc0022a4c&country=nz&callback=initAddy" async defer></script>         -->
     <!-- or CDN -->
-    <!-- <script src="https://www.addysolutions.com/address-lookup/1.6.2/js/addy.min.js?nzKey=demo-api-key&country=nz&callback=initAddy" async defer></script>         -->
+    <script src="https://www.addysolutions.com/address-lookup/1.6.2/js/addy.min.js?nzKey=e52121541ba843c2bb3b1b0dc0022a4c&country=nz&callback=initAddy" async defer></script>        
     
     <!-- for AU country -->
     <!-- <script src="https://www.addysolutions.com/address-lookup/1.6.2/js/addy.min.js?auKey=demo-api-key&country=au&callback=initAddy" async defer></script>     -->
