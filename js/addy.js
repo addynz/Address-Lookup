@@ -1,10 +1,10 @@
 /** 
- * Addy autocomplete v1.6.2 
+ * Addy autocomplete v1.6.3 
  * 
  * Neat Complete v1.5.10 (c) 2019 AddressFinder https://addressfinder.nz https://addressfinder.com.au https://github.com/AbleTech/neat-complete/blob/develop/LICENSE.md 
  * 
 */
-const jsVersion = '1.6.2';
+const jsVersion = '1.6.3';
 function AddyUrlSettingFactory(e) {
   function t(e) {
     e = (typeof e === 'string') ? e.replace(/[\[\]]/g, "\\$&") : '';
@@ -48,7 +48,7 @@ function AddyUrlSettingFactory(e) {
       (e.tag = t("tag") || ""),
       (e.uniqueId = t("uniqueid") || ""),
       (e.maxItems = t("maxItems") || 10),
-      (e.enableLocation = !!t("enableLocation") && navigator.geolocation),
+      (e.enableLocation = String(t("enableLocation")).toLowerCase() === "true" && navigator.geolocation),
       e
     );
   }),
